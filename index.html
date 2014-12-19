@@ -2,16 +2,29 @@
 <style src="test.css"></style>
 <script type="text/javascript">
 window.onload = function(){
-	console.log(_('div').parent().children(1).css('background-color','black').attr('lol','hi'))
-	_('div').css('color','white')
+	_('#one').fadeIn();
+	
+  _('#one').on('click', function(){
+    var ht = _(this).width();	
+    alert(ht);
+  });
 
-	_('div').on('click',function(event){
-		console.log(_(event.target).css('background-color','yellow'))
-	})
+  _('span').on('click', function(){
+    var lt = _(this).width();	
+    alert(lt);
+  });
+
+
+  _('.another').addClass('red');		    
+  _('#three').on('click', function(){
+    _('#four').toggleClass('blue');
+  });
+
 }
 </script>
 
 <body>
-<div> hi</div>
+<div class="first">hi</div>
+<div class="another"><span>blah</span> hi2</div>
 
 </body>
