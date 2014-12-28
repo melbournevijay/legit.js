@@ -42,7 +42,7 @@ function _(selector){
 		return self;
 	}
 	self.hide = function(){ //hide an element
-		if (self.elements){
+		if(self.elements){
 			for (var i=0; i < self.elements.length; i++){
 				self.elements[i].style.display = 'none';
 			}
@@ -51,7 +51,7 @@ function _(selector){
 		} return self;
 	}
 	self.show = function(){ //show an element
-		if (self.elements){
+		if(self.elements){
 			for (var i=0; i < self.elements.length; i++){
 				self.elements[i].style.display = '';
 			}
