@@ -42,13 +42,10 @@ function _(selector){
 		return self;
 	}
 	self.hide = function(){ //hide an element
-		if(self.elements){
-			for (var i=0; i < self.elements.length; i++){
-				self.elements[i].style.display = 'none';
-			}
-		} else {
-			self.element.style.display = 'none';
-		} return self;
+		for (var i=0; i < self.elements.length; i++){
+			self.elements[i].style.display = 'none';
+		}
+		return self;
 	}
 	self.show = function(){ //show an element
 		if(self.elements){
