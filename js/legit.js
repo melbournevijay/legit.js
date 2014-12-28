@@ -31,8 +31,7 @@ function _(selector){
 		}
 		else {
 			self.element.textContent = value;
-		}	
-		return self;
+		} return self;
 	}
 	self.next = function(){ //get next element
 		self.element = self.element.nextElementSibling;
@@ -43,12 +42,22 @@ function _(selector){
 		return self;
 	}
 	self.hide = function(){ //hide an element
-		self.element.style.display = 'none';
-		return self;
+		if (self.elements){
+			for (var i=0; i < self.elements.length; i++){
+				self.elements[i].style.display = 'none';
+			}
+		} else {
+			self.element.style.display = 'none';
+		} return self;
 	}
 	self.show = function(){ //show an element
-		self.element.style.display = '';
-		return self;
+		if (self.elements){
+			for (var i=0; i < self.elements.length; i++){
+				self.elements[i].style.display = '';
+			}
+		} else {
+			self.element.style.display = '';
+		} return self;
 	}
 	self.after = function(htmlString){ //insert after a parent element
 		self.element.insertAdjacentHTML('afterend', htmlString);
