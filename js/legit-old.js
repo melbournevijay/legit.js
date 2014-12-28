@@ -36,7 +36,7 @@ function _(selector){
 		self.element = self.element.parentNode;
 		return self;
 	}
-	//get children elements
+	//get children elements - use .children(1) to specify which child
 	self.children = function(key){
 		if(!key) key = 0;
 		self.element = self.element.childNodes[key];
@@ -48,7 +48,7 @@ function _(selector){
 
 	self.on = function(type,callback){
 		self.element['on' + type] = callback;
-		return self
+		return self;
 	}
 
 	/* CSS Related FUNCTIONS */
@@ -142,6 +142,19 @@ function _(selector){
 	  tick();
 		return self;  
 	}
+	self.after = function(htmlString){ //insert after a parent element
+		self.element.insertAdjacentHTML('afterend', htmlString);
+		return self;
+	}
+	self.before = function(htmlString){ //insert before a parent element
+		self.element.insertAdjacentHTML('beforebegin', htmlString);
+		return self;
+	}
+	self.clone = function(){ 
+		self.element.cloneNode(true);
+		return self;
+	}
+
 
 	return self;
 }

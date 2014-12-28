@@ -1,0 +1,96 @@
+/**
+ * Modals v6.0.1
+ * Simple modal dialogue pop-up windows, by Chris Ferdinandi.
+ * http://github.com/cferdinandi/modals
+ * 
+ * Free to use under the MIT License.
+ * http://gomakethings.com/mit/
+ */
+
+/*  Hide modal window by default */
+.modal {
+  display: none;
+  visibility: hidden;
+  z-index: 9999;
+  background-color: #000;
+  border: 0.0725em solid #e5e5e5;
+  padding: 0.5em 1em;
+  border-radius: 0.0725em;
+  -webkit-box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.3);
+}
+
+/*  When active, show modal window */
+.modal.active {
+  display: block;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 30em) {
+  .modal.active {
+    top: 50px;
+    left: 3%;
+    right: 3%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*  Modal styling for bigger screens */
+@media (min-width: 40em) {
+  .modal.active {
+    left: 8%;
+    right: 8%;
+  }
+
+  /* Set max-width on medium sized modals */
+  .modal-medium.active {
+    max-width: 35em;
+  }
+
+  /* Set max-width on small sized modals */
+  .modal-small.active {
+    max-width: 25em;
+  }
+}
+/*  Styling for modal window background */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+  background-color: #272727;
+  opacity: .8;
+  filter: alpha(opacity=80);
+}
+
+/*  Styling for close button */
+.close {
+  float: right;
+  color: #fff;
+  background-color: red;
+  padding: .15em .25em;
+  padding-top: .1em;
+  border-radius: 15%;
+  font-weight: bold;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/*  Styling for close button on hover */
+.close:hover {
+  color: #5a5a5a;
+  text-decoration: none;
+  cursor: pointer;
+}
