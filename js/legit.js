@@ -60,23 +60,6 @@ function _(selector){
 			self.element.style.display = '';
 		} return self;
 	}
-	self.toggle = function(){
-		if(self.elements){
-			for (var i=0; i < self.elements.length; i++){
-				if(self.elements[i].style.display = '') {
-					self.elements[i].style.display = 'none';
-				} else {
-					self.elements[i].style.display = '';
-				}	
-			}
-		} else {
-			if(self.element.style.display = '';) {
-				self.element.style.display = 'none';
-			} else { 
-				self.element.style.display = '';
-			}	
-		} return self;
-	}
 	self.after = function(htmlString){ //insert after a parent element
 		self.element.insertAdjacentHTML('afterend', htmlString);
 		return self;
@@ -175,5 +158,6 @@ function _(selector){
 			}
 		} return self;
 	}
+  
 	return self; // so that you may chain functions
 }
