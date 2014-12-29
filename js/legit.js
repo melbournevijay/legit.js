@@ -123,6 +123,7 @@ function _(selector){
 			self.element.style[name] = value;
 		} return self;
 	}
+	/*
 	self.class = function(className){ 		//if no class set, return the current class
 	  	if(!className) return self.element.getAttribute('class');
 		else if(self.elements){
@@ -157,7 +158,7 @@ function _(selector){
 				self.element.className = classes.join(' ');
 			}
 		} return self;
-	}
+	}*/
   
 	return self; // so that you may chain functions
 }
